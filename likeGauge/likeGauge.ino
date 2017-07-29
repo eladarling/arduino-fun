@@ -3,7 +3,8 @@
 Servo servofriend;
 
 const int servoAttachPin = 6;
-
+int pos = 90;
+  
 void setup() 
 {
   servofriend.attach(servoAttachPin);
@@ -13,7 +14,6 @@ void setup()
 
 void ReadCommandFromSerial()
 {
-  int pos = 0;
   int where = -1;   //so we know if shit isn't working
 
   char twist = Serial.read(); //I'm not actually sure if this is necessary?
