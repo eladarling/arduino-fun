@@ -45,7 +45,7 @@ void ReadCommandFromSerial()
 /* For some reason the servo starts at 90 and wont go above 100 or below 80 now.
  *  When initializing, it doesn't always fully or correctly print the intro line (SHOW ME WHAT YOU GOT)
  *  Possibly related, when I have it plugged in for a few minutes, the attached motor starts spinning wildly. Disconnecting the motor didn't help.
- *  
+ *  update: this was because I declared int pos in the function so every time it completed, the pos was reset to 90.
  */
 
 
