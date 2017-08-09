@@ -1,5 +1,5 @@
-int trigPin = 5;    //Trig 
-int echoPin = 3;    //Echo 
+int trigPin = A4;    //Trig 
+int echoPin = A5;    //Echo 
 
 long duration, cm, inches;    //define distance variables
  
@@ -29,5 +29,4 @@ void loop()
   Serial.print("cm");
   Serial.println();
   
-  delay(250);
 }
