@@ -57,23 +57,39 @@ void ReadCommandFromSerial()
     case '3':
     {
       rspeed = rspeed - 20;
-        if (rspeed < 0)
-        rspeed = 0;
-      rightMotor->run(FORWARD);
-      rightMotor->setSpeed(rspeed);
-      Serial.println ("right whoa there!");
-      Serial.println (rspeed);
+      if (rspeed < 0)
+      {  
+        rightMotor->run(BACKWARD);
+        rightMotor->setSpeed(rspeed * -1);
+        Serial.println ("right waheey!");
+        Serial.println (rspeed);
+      }
+      else
+      {
+        rightMotor->run(FORWARD);
+        rightMotor->setSpeed(rspeed);
+        Serial.println ("right whoa there!");
+        Serial.println (rspeed);
+      }
     }  
       break;
     case '4':
     {  
       lspeed = lspeed - 20;
-        if (lspeed < 0)
-        lspeed = 0;
-      leftMotor->run(FORWARD);
-      leftMotor->setSpeed(lspeed); 
-      Serial.println ("left whoa there!");
-      Serial.println (lspeed);
+      if (lspeed < 0)
+      {  
+        leftMotor->run(BACKWARD);
+        leftMotor->setSpeed(lspeed * -1);
+        Serial.println ("left waheey!");
+        Serial.println (lspeed);
+      }
+      else
+      {
+        leftMotor->run(FORWARD);
+        leftMotor->setSpeed(lspeed); 
+        Serial.println ("left whoa there!");
+        Serial.println (lspeed);      
+      }
     }  
       break;
    }
