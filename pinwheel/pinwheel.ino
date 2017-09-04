@@ -1,5 +1,5 @@
 
-int motorPin = 9;
+int motorPin = 11;
 int speed = 0;
 
 void setup() 
@@ -13,13 +13,13 @@ void ReadCommandFromSerial()
   char spin = Serial.read();
   switch (spin)
   {
-    case '0':
+    case 'ai':
       speed = 0;
       analogWrite(motorPin, speed);
       Serial.println ("hold yer horses, cowboy!");
       Serial.println (speed);
       break;
-    case '1':
+    case 'bi':
       speed = speed + 20;
       if (speed > 240)
         speed = 240;
@@ -27,7 +27,7 @@ void ReadCommandFromSerial()
       Serial.println ("yeehaw!");
       Serial.println (speed);
       break;
-    case '2':
+    case 'ci':
       speed = speed - 20;
         if (speed < 0)
         speed = 0;

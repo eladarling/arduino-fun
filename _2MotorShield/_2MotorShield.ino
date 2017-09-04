@@ -12,25 +12,10 @@ void setup() {
   Serial.begin(9600);
   Serial.println("Lets Go!");
   AFMS.begin();
-
- /* rightMotor->setSpeed(150);
-  leftMotor->setSpeed(150);
-  rightMotor->run(FORWARD);
-  leftMotor->run(FORWARD);
-  rightMotor->run(RELEASE);
-  leftMotor->run(RELEASE);*/
 }
 
 void loop() {
 
-  /*rightMotor->run(FORWARD);
-  leftMotor->run(FORWARD);  
-  rightMotor->setSpeed(150);
-  leftMotor->setSpeed(150);
-  delay (1000);
-  rightMotor->run(RELEASE);
-  leftMotor->run(RELEASE);  
-  delay (1000);*/
   Serial.println("backward");
   rightMotor->run(BACKWARD);
   rightMotor->setSpeed(150);
