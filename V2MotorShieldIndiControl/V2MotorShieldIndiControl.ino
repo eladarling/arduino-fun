@@ -35,8 +35,7 @@ void ReadCommandFromSerial()
     case '1':
     {
       rspeed = rspeed + 20;
-      if (rspeed > 240)
-        rspeed = 240;
+      rspeed = constrain(rspeed, -240, 240);
       rightMotor->run(FORWARD);
       rightMotor->setSpeed(rspeed);
       Serial.println ("right yeehaw!");
@@ -46,8 +45,7 @@ void ReadCommandFromSerial()
     case '2':
     {
       lspeed = lspeed + 20;
-      if (lspeed > 240)
-        lspeed = 240;
+      lspeed = constrain(lspeed, -240, 240);
       leftMotor->run(FORWARD);
       leftMotor->setSpeed(lspeed);
       Serial.println ("left yeehaw!");
@@ -57,6 +55,7 @@ void ReadCommandFromSerial()
     case '3':
     {
       rspeed = rspeed - 20;
+      rspeed = constrain(rspeed, -240, 240);
       if (rspeed < 0)
       {  
         rightMotor->run(BACKWARD);
@@ -76,6 +75,7 @@ void ReadCommandFromSerial()
     case '4':
     {  
       lspeed = lspeed - 20;
+      lspeed = constrain(lspeed, -240, 240);
       if (lspeed < 0)
       {  
         leftMotor->run(BACKWARD);
