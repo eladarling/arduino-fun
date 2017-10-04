@@ -4,7 +4,7 @@ Servo lilguy;   //declare the servo. He's a lil guy.
 
 const int servoPin = 9; //attach the servo to pin9
 
-int speed = 90;  //i am guessing we're going to start by establishing the speed followed by a delay
+int pos = 1465;  //i am guessing we're going to start by establishing the speed followed by a delay
 
 
 
@@ -12,6 +12,7 @@ void setup() {
   Serial.begin(9600);
   lilguy.attach(servoPin);
   Serial.println("Ready!");
+  lilguy.write(pos);
 }
 
 void ReadCommandFromSerial()
@@ -20,24 +21,28 @@ void ReadCommandFromSerial()
   switch(rotate)
   {
     case '0':
-    {speed = 90;
-     lilguy.write(speed);
+    {pos = 1465;
+     lilguy.writeMicroseconds(pos);
      Serial.println ("stopped");
-     Serial.println (speed);
+     Serial.println (pos);
     }
+    break;
     case '1':
-    {speed = speed + 10;
-     lilguy.write(speed);
-     Serial.println ("plus 10");
-     Serial.println (speed);
+    {pos = pos + 70;
+     lilguy.writeMicroseconds(pos);
+     Serial.println ("plus");
+     Serial.println (pos);
     }
+    break;
     case '2':
-    {speed = speed - 10;
-     lilguy.write(speed);
-     Serial.println ("minus 10");
-     Serial.println (speed);
+    {pos = pos - 70;
+     lilguy.writeMicroseconds(pos);
+     Serial.println ("minus");
+     Serial.println (pos);
     }
+    break;
   }
+  delay(150);
 }
 void loop() {
  ReadCommandFromSerial();
