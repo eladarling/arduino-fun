@@ -61,7 +61,7 @@ void ReadCommandFromSerial() {
     Serial.println ("Good boy, Gonzo!");   
     delayMicroseconds(50000);
   }
-  //digitalWrite(sleepPin,LOW);  //hopefully this will help with motor overheating
+  digitalWrite(sleepPin,LOW);  //hopefully this will help with motor overheating
   
 
 }
