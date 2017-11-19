@@ -28,14 +28,14 @@ void ReadCommandFromSerial()
     }
     break;
     case '1':
-    {pos = pos + 70;
+    {pos = pos + 90;
      lilguy.writeMicroseconds(pos);
      Serial.println ("plus");
      Serial.println (pos);
     }
     break;
     case '2':
-    {pos = pos - 70;
+    {pos = pos - 90;
      lilguy.writeMicroseconds(pos);
      Serial.println ("minus");
      Serial.println (pos);
